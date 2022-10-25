@@ -1,0 +1,134 @@
+<html>
+<head>
+    <style>
+        .eye {
+            margin-left: -200px;
+        }
+        .statement-area {
+
+        }
+        .statement-at-front #scene {
+            width: 100vw;
+            height: 100vh;
+
+            margin-top: -400px;
+            margin-left: 100px;
+        }
+        .statement-at-front img {
+            margin-left: 470px;
+            width: 400px;
+        }
+
+    </style>
+</head>
+<body class="eye">
+
+<!-- keep ! -->
+    <!--    <script src="core-lib/js/viewported-knot-at-locate-knot-from-bottom-statement/draft-handle-knot-from-cubic-project.js"></script>-->
+    <script src="core-lib/viewported-knot-at-knot-locate-from-bottom-statement/draft-compact-knot-locate-from-cubic-project.js"></script>
+    <script src="core-lib/viewported-knot-at-knot-locate-from-bottom-statement/draft-knot-locate-from-cubic-project.js"></script>
+    <script src="core-lib/viewported-knot-at-knot-locate-from-bottom-statement/handle-knot-locate-from-cubic-project.js"></script>
+
+
+<!--    <script src="core-lib/js/viewported-knot-at-knot-labirint/draft-handle.js"></script>-->
+    <script src="core-lib/js/viewported-knot-at-knot-labirint/draft-compact-at-bounced.js"></script>
+    <script src="core-lib/js/viewported-knot-at-knot-labirint/draft-at-bounced.js"></script>
+    <script src="core-lib/js/viewported-knot-at-knot-labirint/handle-at-bounced.js"></script>
+
+<!--    <script src="core-lib/js/viewported-knot-at-knot-labirint-from-bottom-statement/draft-handle-knot-from-cubic-project.js"></script>-->
+    <script src="core-lib/js/viewported-knot-at-knot-labirint-from-bottom-statement/draft-compact-knot-from-cubic-project.js"></script>
+    <script src="core-lib/js/viewported-knot-at-knot-labirint-from-bottom-statement/draft-knot-from-cubic-project.js"></script>
+    <script src="core-lib/js/viewported-knot-at-knot-labirint-from-bottom-statement/handle-knot-from-cubic-project.js"></script>
+
+<!--    <script src="core-lib/js/knot-labirint/draft-handle-knot-labirint.js"></script>-->
+    <script src="core-lib/js/knot-labirint/draft-compact-knot-labirint.js"></script>
+    <script src="core-lib/js/knot-labirint/draft-knot-labirint.js"></script>
+    <script src="core-lib/js/knot-labirint/handle-knot-labirint.js"></script>
+
+    <script src="core-lib/js/viewported-knot-at-knot-labirint/draft-compact.js"></script>
+    <script src="core-lib/js/viewported-knot-at-knot-labirint/viewported-knot-at-protected-scene.js"></script>
+    <script src="core-lib/js/viewported-knot-at-knot-labirint/viewported-knot-at-protected-viewport.js"></script>
+    <script src="core-lib/js/viewported-knot-at-knot-labirint/viewported-knot-at-pub.js"></script>
+
+
+    <div class="statement-area">
+        <div class="statement-at-front">
+            <img src="core-lib/img/terra-knot-from-bottom-statement-from-locate.png">
+            <div class="isometric">
+                <div class="from-bottom-projection">
+                    <canvas id="scene"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // keep
+
+        let pencil = new Pencil()
+        let sceneWalkingAroundLabirintAtStart = new SceneWalkingAroundLabirintAtStart()
+
+        let draftFabrikk = new DraftFabrikk()
+
+        let bottomStatement = draftFabrikk.constructBottomStatement()
+
+        pencil.rememberSample(sceneWalkingAroundLabirintAtStart, new KnotFromCubicProject())
+        pencil.useScene(sceneWalkingAroundLabirintAtStart)
+
+        // keep
+        let knotFromCubicProject = pencil.constructKnot()
+
+        draftFabrikk.connectKnotToBottomStatement(bottomStatement, knotFromCubicProject)
+
+        // keep
+        pencil.provideScene().putKnotConnectedToBottomStatement(knotFromCubicProject)
+
+        // keep
+
+        // keep !
+        pencil.rememberSample(sceneWalkingAroundLabirintAtStart, new KnotFromCubicProjectFromBottomStatement())
+        pencil.useScene(sceneWalkingAroundLabirintAtStart)
+
+        let knotFromCubicProjectFromBottomStatement = pencil.constructKnot()
+
+        draftFabrikk.connectKnotToBottomStatement(bottomStatement, knotFromCubicProjectFromBottomStatement)
+
+        // keep
+        pencil.provideScene().putKnotConnectedToBottomStatement(knotFromCubicProjectFromBottomStatement)
+
+        // keep !
+        pencil.rememberSample(sceneWalkingAroundLabirintAtStart, new KnotLabirint())
+        pencil.useScene(sceneWalkingAroundLabirintAtStart)
+
+        let knotLabirint = pencil.constructKnot()
+
+        draftFabrikk.connectKnotToBottomStatement(bottomStatement, knotLabirint)
+
+        // keep
+        pencil.provideScene().putKnotConnectedToBottomStatement(knotLabirint)
+        // keep !
+
+        pencil.rememberSample(sceneWalkingAroundLabirintAtStart, new KnotLocate())
+        pencil.useScene(sceneWalkingAroundLabirintAtStart)
+
+        let knotLocate = pencil.constructKnot()
+
+        draftFabrikk.connectKnotToBottomStatement(bottomStatement, knotLocate)
+
+        // keep
+        pencil.provideScene().putKnotConnectedToBottomStatement(knotLocate)
+        // keep !
+
+        // let viewportedKnotLocate = draftFabrikk.constructViewportedKnotLocate()
+
+        // keep
+        let viewportPointerBelongings = draftFabrikk.constructViewport()
+        pencil.useViewport(viewportPointerBelongings.atVerticalPosition, viewportPointerBelongings.atDistance, viewportPointerBelongings.atHorizontalPosition)
+
+        pencil.draw()
+
+        // keep !
+    </script>
+
+</body>
+</html>
